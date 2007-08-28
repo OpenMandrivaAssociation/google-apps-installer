@@ -30,7 +30,6 @@ install -d -m 0755 %buildroot/%_datadir/applications/
 
 cat > %buildroot/%_datadir/applications/googleearthinstall.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Icon=mandrake
 Name=Google Earth Install
 Type=Application
@@ -41,7 +40,6 @@ EOF
 
 cat > %buildroot/%_datadir/applications/googlepicasainstall.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Icon=mandrake
 Name=Google Picasa Install
 Type=Application
