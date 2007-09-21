@@ -1,8 +1,8 @@
 %define name	google-apps-installer
 %define version	0.4
-%define release %mkrel 1
+%define release %mkrel 2
 
-Summary:	Desktop links to install GoogleEarth
+Summary:	Desktop links to install Google apps
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
@@ -14,7 +14,7 @@ Requires:	wget gurpmi
 Buildarch:	noarch
 
 %description
-This is an icon for the default PWP desktop, used to install GoogleEarth.
+This is an icon for the default PWP desktop, used to install GoogleEarth and Picasa.
 
 %build
 
@@ -34,6 +34,18 @@ Exec=sh -c "wget http://api.mandriva.com/3rd-party/200800/downloadURL/GoogleEart
 Categories=X-MandrivaLinux-Internet;X-MandrivaLinux-CrossDesktop;
 EOF
 
+cat > %buildroot/%_datadir/applications/googlepicasainstall.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Icon=mandrake
+Name=Google Picasa Install
+Type=Application
+Terminal=true
+Exec=sh -c "wget http://api.mandriva.com/3rd-party/200800/downloadURL/GooglePicasa -O GooglePicasa.rpm && gurpmi GooglePicasa.rpm"
+Categories=X-MandrivaLinux-Multimedia-Graphics;X-MandrivaLinux-CrossDesktop;
+EOF
+
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -43,6 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Sep 21 2007 Anne Nicolas <anne.nicolas@mandriva.com> 0.4-2mdv2008.0
+- restore Picasa  (missing agreement)
+
 * Tue Sep 18 2007 Anne Nicolas <anne.nicolas@mandriva.com> 0.4-1mdv2008.0
 - remove picasa
 - fix menu
