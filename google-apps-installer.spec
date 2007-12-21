@@ -9,6 +9,7 @@ Release:	%{release}
 License:	GPL
 Group:		System/Configuration/Other
 URL:		http://www.mandrivalinux.com
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	wget gurpmi  
 Buildarch:	noarch
 
