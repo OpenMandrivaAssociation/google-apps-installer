@@ -14,7 +14,8 @@ Requires:	wget gurpmi
 Buildarch:	noarch
 
 %description
-This is an icon for the default PWP desktop, used to install GoogleEarth and Picasa.
+This is an icon for the default PWP desktop, used to install GoogleEarth and
+Picasa.
 
 %build
 
