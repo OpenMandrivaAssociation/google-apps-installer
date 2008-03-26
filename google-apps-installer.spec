@@ -1,6 +1,6 @@
 %define name	google-apps-installer
-%define version	0.4
-%define release %mkrel 2
+%define version	0.5
+%define release %mkrel 1
 
 Summary:	Desktop links to install Google apps
 Name:		%{name}
@@ -14,8 +14,7 @@ Requires:	wget gurpmi
 Buildarch:	noarch
 
 %description
-This is an icon for the default PWP desktop, used to install GoogleEarth and
-Picasa.
+This is an icon for the default PWP desktop, used to install GoogleEarth.
 
 %build
 
@@ -34,18 +33,6 @@ Terminal=true
 Exec=sh -c "wget http://api.mandriva.com/3rd-party/200800/downloadURL/GoogleEarth -O GoogleEarthLinux.bin && sh +x GoogleEarthLinux.bin"
 Categories=X-MandrivaLinux-Internet;X-MandrivaLinux-CrossDesktop;
 EOF
-
-cat > %buildroot/%_datadir/applications/googlepicasainstall.desktop << EOF
-[Desktop Entry]
-Encoding=UTF-8
-Icon=mandrake
-Name=Google Picasa Install
-Type=Application
-Terminal=true
-Exec=sh -c "wget http://api.mandriva.com/3rd-party/200800/downloadURL/GooglePicasa -O GooglePicasa.rpm && gurpmi GooglePicasa.rpm"
-Categories=X-MandrivaLinux-Multimedia-Graphics;X-MandrivaLinux-CrossDesktop;
-EOF
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
