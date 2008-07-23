@@ -1,6 +1,6 @@
 %define name	google-apps-installer
 %define version	0.5
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Desktop links to install Google apps
 Name:		%{name}
